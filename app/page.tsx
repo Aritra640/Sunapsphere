@@ -17,7 +17,7 @@ export default function Home() {
 
         <div className="mt-10">
           <Link
-            href="/dashboard"
+            href="/signup"
             className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-indigo-600 px-7 py-3 rounded-full text-lg font-semibold hover:shadow-[0_0_35px_4px_rgba(168,85,247,0.6)] transition-all"
           >
             Enter SynapSphere <ArrowRight size={20} />
@@ -98,7 +98,7 @@ export default function Home() {
           intelligent graph of your thoughts.
         </p>
         <Link
-          href="/dashboard"
+          href="/signup"
           className="px-10 py-4 bg-purple-600 hover:bg-purple-700 rounded-full text-lg font-semibold transition-all hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]"
         >
           Start Building Your Second Brain

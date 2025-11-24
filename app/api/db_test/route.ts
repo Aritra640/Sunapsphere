@@ -38,3 +38,4 @@ export async function DELETE() {
     return NextResponse.json({ message: "data deletion failed!" });
   }
 }
+
