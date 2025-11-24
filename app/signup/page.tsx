@@ -30,6 +30,7 @@ export default function Signup() {
           redirect('/dashboard');
         },
         onError: (ctx) => {
+          console.log(ctx.error);
           alert(ctx.error.message);
         },
       },
