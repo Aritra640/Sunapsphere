@@ -3,24 +3,29 @@
 import { useState } from "react";
 import { SendHorizontal } from "lucide-react";
 
+type Message = {
+  sender: "user" | "ai";
+  text: string;
+};
+
 export default function ChatPage() {
-  const [messages, setMessages] = useState<{ sender: "user" | "ai"; text: string }[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
 
   const handleSend = () => {
     if (!input.trim()) return;
 
-    const userMessage = { sender: "user", text: input };
+    const userMessage: Message = { sender: "user", text: input };
     setMessages((prev) => [...prev, userMessage]);
-
     setInput("");
 
     // Placeholder AI response
     setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        { sender: "ai", text: "AI will soon respond with intelligent insights 🌟" },
-      ]);
+      const aiMessage: Message = {
+        sender: "ai",
+        text: "AI will soon respond with intelligent insights 🌟",
+      };
+      setMessages((prev) => [...prev, aiMessage]);
     }, 800);
   };
 
@@ -82,5 +87,4 @@ export default function ChatPage() {
     </main>
   );
 }
-
 
