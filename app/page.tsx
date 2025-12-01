@@ -1,4 +1,3 @@
-// app/page.tsx
 import { ArrowRight, Brain, Youtube, Twitter, FileText } from "lucide-react";
 import Link from "next/link";
 
@@ -99,7 +98,7 @@ export default function Home() {
         </p>
         <Link
           href="/signup"
-          className="px-10 py-4 bg-purple-600 hover:bg-purple-700 rounded-full text-lg font-semibold transition-all hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]"
+          className="px-7 py-4 md:px-10 md:py-4 bg-purple-600 hover:bg-purple-700 rounded-full text-lg font-semibold transition-all hover:shadow-[0_0_30px_rgba(168,85,247,0.6)]"
         >
           Start Building Your Second Brain
         </Link>
