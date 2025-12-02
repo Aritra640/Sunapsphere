@@ -79,7 +79,7 @@ model Verification {
 
 model Card {
   id        String   @id  @default(uuid())
-  title     String
+  title     String   @unique
   type      String
   content   String
   createdAt DateTime @default(now())

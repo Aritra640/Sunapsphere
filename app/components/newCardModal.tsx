@@ -11,7 +11,7 @@ export function NewCardModal() {
   const [titleValue, setTitleValue] = useState("");
   const [contentValue, setContentValue] = useState("");
 
-  const router = useRouter(); // For refreshing dashboard after add
+  const router = useRouter(); 
 
   const placeholderMap: Record<string, string> = {
     Text: "Enter text...",
@@ -40,14 +40,13 @@ export function NewCardModal() {
 
       if (!res.ok) return;
 
-      // Smooth close and refresh without popup
       setOpen(false);
       setTitleValue("");
       setContentValue("");
       setFileName("");
       setType("Text");
 
-      router.refresh(); // refresh dashboard instantly
+      router.refresh(); 
 
     } catch (err) {
       console.error(err);

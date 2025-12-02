@@ -16,6 +16,7 @@ interface CardProps {
 export default function Card({ id, Type, Title, Content, CreatedAt }: CardProps) {
   const router = useRouter();
   const [updateOpen, setUpdateOpen] = useState(false);
+  const title = Title;
 
   const dateObj = new Date(CreatedAt);
   const date = dateObj.toISOString().split("T")[0];
@@ -26,7 +27,7 @@ export default function Card({ id, Type, Title, Content, CreatedAt }: CardProps)
       const res = await fetch("/api/protected/cards", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id }),
+        body: JSON.stringify({ title }),
       });
 
       if (!res.ok) {
@@ -82,7 +83,7 @@ export default function Card({ id, Type, Title, Content, CreatedAt }: CardProps)
 
   return (
     <>
-      <div className="relative bg-black border border-gray-800 rounded-xl p-4 shadow-lg hover:shadow-gray-700 transition-shadow duration-300 w-full max-w-md">
+      <div className="relative bg-black  border border-gray-800 rounded-xl p-4 shadow-lg hover:shadow-gray-700 transition-shadow duration-300 w-full max-w-md">
 
         <div className="absolute top-3 right-3 flex space-x-3">
           <button aria-label="Edit" onClick={() => setUpdateOpen(true)}>
